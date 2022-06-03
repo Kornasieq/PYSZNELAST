@@ -9,6 +9,7 @@
       Title="Użytkownik">
 
     <Grid Background="Green">
-        
+        <DataGrid x:Name="Uzytk" ItemsSource=""/>
+
     </Grid>
 </Page>

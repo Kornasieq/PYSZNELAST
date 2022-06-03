@@ -27,7 +27,7 @@ namespace PYSZNELAST
 
         private void Btn1(object sender, RoutedEventArgs e)
         {
-            MainW.Content = new Zamówienie();
+            MainW.Content = new Zam();
         }
 
         private void Btn2(object sender, RoutedEventArgs e)
@@ -37,7 +37,7 @@ namespace PYSZNELAST
 
         private void Btn3(object sender, RoutedEventArgs e)
         {
-            MainW.Content = new Restauracja();
+            MainW.Content = new Rest();
         }
     }
 }

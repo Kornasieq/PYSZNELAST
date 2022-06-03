@@ -20,9 +20,11 @@ namespace PYSZNELAST
     /// </summary>
     public partial class Użytkownik : Page
     {
+        RestauracjaEntities db = new RestauracjaEntities();
         public Użytkownik()
         {
             InitializeComponent();
+            Uzytk.ItemsSource = db.Zamówienie.ToList();
         }
     }
 }

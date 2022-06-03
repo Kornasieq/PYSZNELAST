@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RestauracjaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Jedzonko">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id_Restauracji" Type="int" Nullable="false" />
+          <Property Name="Nazwa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cena" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Restauracja">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Nazwa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adres" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Użytkownicy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Nazwa_Użytkownika" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Hasło" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adres" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zamówienie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id_Użytkownika" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zamówienie_Jedzenie">
+          <Key>
+            <PropertyRef Name="Id_Jedzenia" />
+            <PropertyRef Name="Id_Zamówienia" />
+          </Key>
+          <Property Name="Id_Jedzenia" Type="int" Nullable="false" />
+          <Property Name="Id_Zamówienia" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Jedzonko_Restauracja">
+          <End Role="Restauracja" Type="Self.Restauracja" Multiplicity="1" />
+          <End Role="Jedzonko" Type="Self.Jedzonko" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restauracja">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Jedzonko">
+              <PropertyRef Name="Id_Restauracji" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamówienie_Jedzenie_Jedzonko">
+          <End Role="Jedzonko" Type="Self.Jedzonko" Multiplicity="1" />
+          <End Role="Zamówienie_Jedzenie" Type="Self.Zamówienie_Jedzenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jedzonko">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zamówienie_Jedzenie">
+              <PropertyRef Name="Id_Jedzenia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamówienie_Jedzenie_Zamówienie">
+          <End Role="Zamówienie" Type="Self.Zamówienie" Multiplicity="1" />
+          <End Role="Zamówienie_Jedzenie" Type="Self.Zamówienie_Jedzenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zamówienie">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zamówienie_Jedzenie">
+              <PropertyRef Name="Id_Zamówienia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamówienie_Użytkownicy">
+          <End Role="Użytkownicy" Type="Self.Użytkownicy" Multiplicity="1" />
+          <End Role="Zamówienie" Type="Self.Zamówienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Użytkownicy">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zamówienie">
+              <PropertyRef Name="Id_Użytkownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RestauracjaModelStoreContainer">
+          <EntitySet Name="Jedzonko" EntityType="Self.Jedzonko" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Restauracja" EntityType="Self.Restauracja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Użytkownicy" EntityType="Self.Użytkownicy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zamówienie" EntityType="Self.Zamówienie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zamówienie_Jedzenie" EntityType="Self.Zamówienie_Jedzenie" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Jedzonko_Restauracja" Association="Self.FK_Jedzonko_Restauracja">
+            <End Role="Restauracja" EntitySet="Restauracja" />
+            <End Role="Jedzonko" EntitySet="Jedzonko" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamówienie_Jedzenie_Jedzonko" Association="Self.FK_Zamówienie_Jedzenie_Jedzonko">
+            <End Role="Jedzonko" EntitySet="Jedzonko" />
+            <End Role="Zamówienie_Jedzenie" EntitySet="Zamówienie_Jedzenie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamówienie_Jedzenie_Zamówienie" Association="Self.FK_Zamówienie_Jedzenie_Zamówienie">
+            <End Role="Zamówienie" EntitySet="Zamówienie" />
+            <End Role="Zamówienie_Jedzenie" EntitySet="Zamówienie_Jedzenie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamówienie_Użytkownicy" Association="Self.FK_Zamówienie_Użytkownicy">
+            <End Role="Użytkownicy" EntitySet="Użytkownicy" />
+            <End Role="Zamówienie" EntitySet="Zamówienie" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RestauracjaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Jedzonko">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id_Restauracji" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cena" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Restauracja" Relationship="Self.FK_Jedzonko_Restauracja" FromRole="Jedzonko" ToRole="Restauracja" />
+          <NavigationProperty Name="Zamówienie" Relationship="Self.Zamówienie_Jedzenie" FromRole="Jedzonko" ToRole="Zamówienie" />
+        </EntityType>
+        <EntityType Name="Restauracja">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Jedzonko" Relationship="Self.FK_Jedzonko_Restauracja" FromRole="Restauracja" ToRole="Jedzonko" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Użytkownicy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa_Użytkownika" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Hasło" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Zamówienie" Relationship="Self.FK_Zamówienie_Użytkownicy" FromRole="Użytkownicy" ToRole="Zamówienie" />
+        </EntityType>
+        <EntityType Name="Zamówienie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id_Użytkownika" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Użytkownicy" Relationship="Self.FK_Zamówienie_Użytkownicy" FromRole="Zamówienie" ToRole="Użytkownicy" />
+          <NavigationProperty Name="Jedzonko" Relationship="Self.Zamówienie_Jedzenie" FromRole="Zamówienie" ToRole="Jedzonko" />
+        </EntityType>
+        <Association Name="FK_Jedzonko_Restauracja">
+          <End Role="Restauracja" Type="Self.Restauracja" Multiplicity="1" />
+          <End Role="Jedzonko" Type="Self.Jedzonko" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restauracja">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Jedzonko">
+              <PropertyRef Name="Id_Restauracji" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamówienie_Użytkownicy">
+          <End Role="Użytkownicy" Type="Self.Użytkownicy" Multiplicity="1" />
+          <End Role="Zamówienie" Type="Self.Zamówienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Użytkownicy">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zamówienie">
+              <PropertyRef Name="Id_Użytkownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Zamówienie_Jedzenie">
+          <End Role="Jedzonko" Type="Self.Jedzonko" Multiplicity="*" />
+          <End Role="Zamówienie" Type="Self.Zamówienie" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="RestauracjaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Jedzonko" EntityType="Self.Jedzonko" />
+          <EntitySet Name="Restauracja" EntityType="Self.Restauracja" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Użytkownicy" EntityType="Self.Użytkownicy" />
+          <EntitySet Name="Zamówienie" EntityType="Self.Zamówienie" />
+          <AssociationSet Name="FK_Jedzonko_Restauracja" Association="Self.FK_Jedzonko_Restauracja">
+            <End Role="Restauracja" EntitySet="Restauracja" />
+            <End Role="Jedzonko" EntitySet="Jedzonko" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamówienie_Użytkownicy" Association="Self.FK_Zamówienie_Użytkownicy">
+            <End Role="Użytkownicy" EntitySet="Użytkownicy" />
+            <End Role="Zamówienie" EntitySet="Zamówienie" />
+          </AssociationSet>
+          <AssociationSet Name="Zamówienie_Jedzenie" Association="Self.Zamówienie_Jedzenie">
+            <End Role="Jedzonko" EntitySet="Jedzonko" />
+            <End Role="Zamówienie" EntitySet="Zamówienie" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RestauracjaModelStoreContainer" CdmEntityContainer="RestauracjaEntities">
+          <EntitySetMapping Name="Jedzonko">
+            <EntityTypeMapping TypeName="RestauracjaModel.Jedzonko">
+              <MappingFragment StoreEntitySet="Jedzonko">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Id_Restauracji" ColumnName="Id_Restauracji" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Restauracja">
+            <EntityTypeMapping TypeName="RestauracjaModel.Restauracja">
+              <MappingFragment StoreEntitySet="Restauracja">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="RestauracjaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Użytkownicy">
+            <EntityTypeMapping TypeName="RestauracjaModel.Użytkownicy">
+              <MappingFragment StoreEntitySet="Użytkownicy">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nazwa_Użytkownika" ColumnName="Nazwa_Użytkownika" />
+                <ScalarProperty Name="Hasło" ColumnName="Hasło" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zamówienie">
+            <EntityTypeMapping TypeName="RestauracjaModel.Zamówienie">
+              <MappingFragment StoreEntitySet="Zamówienie">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Id_Użytkownika" ColumnName="Id_Użytkownika" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Zamówienie_Jedzenie" TypeName="RestauracjaModel.Zamówienie_Jedzenie" StoreEntitySet="Zamówienie_Jedzenie">
+            <EndProperty Name="Jedzonko">
+              <ScalarProperty Name="Id" ColumnName="Id_Jedzenia" />
+            </EndProperty>
+            <EndProperty Name="Zamówienie">
+              <ScalarProperty Name="Id" ColumnName="Id_Zamówienia" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -18,11 +18,13 @@ namespace PYSZNELAST
     /// <summary>
     /// Logika interakcji dla klasy Zamówienie.xaml
     /// </summary>
-    public partial class Zamówienie : Page
+    public partial class Zam : Page
     {
-        public Zamówienie()
+        RestauracjaEntities db = new RestauracjaEntities();
+        public Zam()
         {
             InitializeComponent();
+            menu.ItemsSource = db.Jedzonko.ToList();
         }
     }
 }
