@@ -24,7 +24,7 @@ namespace PYSZNELAST
         public Rest()
         {
             InitializeComponent();
-            restt.ItemsSource = db.Zamówienie.ToList();
+            restt.ItemsSource = db.Restauracja.ToList();
         }
     }
 }

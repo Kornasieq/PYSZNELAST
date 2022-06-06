@@ -24,7 +24,7 @@ namespace PYSZNELAST
         public Użytkownik()
         {
             InitializeComponent();
-            Uzytk.ItemsSource = db.Zamówienie.ToList();
+            Uzytk.ItemsSource = db.Użytkownicy.ToList();
         }
     }
 }

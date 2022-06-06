@@ -9,7 +9,7 @@
       Title="Rest">
 
     <Grid Background="Red">
-        <DataGrid x:Name="restt" ItemsSource=""/>
+        <DataGrid x:Name="restt"/>
 
     </Grid>
 </Page>

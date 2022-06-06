@@ -9,7 +9,7 @@
       Title="Zamówienie">
 
     <Grid Background="Blue">
-        <DataGrid x:Name="menu" ItemsSource=""/>
+        <DataGrid x:Name="menu" />
         
     </Grid>
 </Page>
