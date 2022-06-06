@@ -10,27 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PYSZNELAST
 {
     /// <summary>
-    /// Logika interakcji dla klasy Restauracja.xaml
+    /// Logika interakcji dla klasy NOZ.xaml
     /// </summary>
-    public partial class Rest : Page
+    public partial class NOZ : Window
     {
-        RestauracjaEntities db = new RestauracjaEntities();
-        public Rest()
+        public NOZ()
         {
             InitializeComponent();
-            restt.ItemsSource = db.Restauracja.ToList();
-        }
-
-        private void NOR(object sender, RoutedEventArgs e)
-        {
-            NOR objNOR = new NOR();
-            objNOR.Show();
         }
     }
 }

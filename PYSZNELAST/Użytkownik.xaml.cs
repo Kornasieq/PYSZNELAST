@@ -26,5 +26,11 @@ namespace PYSZNELAST
             InitializeComponent();
             Uzytk.ItemsSource = db.Użytkownicy.ToList();
         }
+
+        private void NOU(object sender, RoutedEventArgs e)
+        {
+            NOU objNOU = new NOU();
+            objNOU.Show();
+        }
     }
 }

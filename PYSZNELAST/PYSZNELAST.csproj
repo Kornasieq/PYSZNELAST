@@ -82,6 +82,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="NOR.xaml.cs">
+      <DependentUpon>NOR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NOU.xaml.cs">
+      <DependentUpon>NOU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NOZ.xaml.cs">
+      <DependentUpon>NOZ.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Restauracja.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -115,6 +124,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NOR.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NOU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NOZ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Rest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

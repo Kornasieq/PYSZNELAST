@@ -26,5 +26,16 @@ namespace PYSZNELAST
             InitializeComponent();
             menu.ItemsSource = db.Jedzonko.ToList();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NOZ(object sender, RoutedEventArgs e)
+        {
+            NOZ objNOZ = new NOZ();
+            objNOZ.Show();
+        }
     }
 }

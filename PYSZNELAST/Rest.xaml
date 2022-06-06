@@ -9,7 +9,8 @@
       Title="Rest">
 
     <Grid Background="Red">
-        <DataGrid x:Name="restt"/>
+        <DataGrid x:Name="restt" Margin="10,10,100,10"/>
+        <Button Content="Edytuj Tabele" Margin="700,10,10,0" VerticalAlignment="Top" Height="58" RenderTransformOrigin="0.553,-1.31" Click="NOR"/>
 
     </Grid>
 </Page>
