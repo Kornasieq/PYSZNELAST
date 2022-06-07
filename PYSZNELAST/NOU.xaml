@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PYSZNELAST"
         mc:Ignorable="d"
-        Title="NOU" Height="222" Width="386">
-    <Grid Background="Green">
+        Title="NOU" Height="222" Width="386" ResizeMode="NoResize">
+    <Grid Background="#FF5AA730">
         <TextBox HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Height="23"/>
         <TextBox HorizontalAlignment="Left" Margin="10,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Height="23"/>
         <TextBox HorizontalAlignment="Left" Margin="10,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Height="23"/>

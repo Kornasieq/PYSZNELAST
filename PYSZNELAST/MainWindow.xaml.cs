@@ -39,5 +39,15 @@ namespace PYSZNELAST
         {
             MainW.Content = new Rest();
         }
+
+        private void MainW_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
+
+        private void MainW_Navigated_1(object sender, NavigationEventArgs e)
+        {
+
+        }
     }
 }

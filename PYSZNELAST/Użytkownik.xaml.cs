@@ -32,5 +32,10 @@ namespace PYSZNELAST
             NOU objNOU = new NOU();
             objNOU.Show();
         }
+
+        private void Uzytk_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

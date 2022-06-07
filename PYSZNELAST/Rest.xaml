@@ -8,8 +8,8 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Rest">
 
-    <Grid Background="Red">
-        <DataGrid x:Name="restt" Margin="10,10,100,10"/>
+    <Grid Background="#FF5AA730">
+        <DataGrid x:Name="restt" Margin="10,85,100,10" IsReadOnly="True"/>
         <Button Content="Edytuj Tabele" Margin="700,10,10,0" VerticalAlignment="Top" Height="58" RenderTransformOrigin="0.553,-1.31" Click="NOR"/>
 
     </Grid>
