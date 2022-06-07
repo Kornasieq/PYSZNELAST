@@ -49,5 +49,16 @@ namespace PYSZNELAST
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAbout(object sender, RoutedEventArgs e)
+        {
+            about objABU = new about();
+            objABU.Show();
+        }
     }
 }

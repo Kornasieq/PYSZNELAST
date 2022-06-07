@@ -1,0 +1,15 @@
+﻿<Window x:Class="PYSZNELAST.about"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PYSZNELAST"
+        mc:Ignorable="d"
+        Title="about" Height="450" Width="450" ResizeMode="NoResize">
+    <Grid Background="#FF5AA730">
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="WSEI" VerticalAlignment="Top" FontSize="48" Margin="0,116,0,0" FontWeight="Bold" Foreground="#FF87C159" />
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="2022" VerticalAlignment="Top" FontSize="48" Margin="0,249,0,0" FontWeight="Bold" Foreground="#FF87C159" RenderTransformOrigin="0.534,2.523" />
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Kornel Gawroński" VerticalAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="#FF87C159"/>
+
+    </Grid>
+</Window>
