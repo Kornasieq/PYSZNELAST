@@ -19,9 +19,35 @@ namespace PYSZNELAST
     /// </summary>
     public partial class NOZ : Window
     {
+        ZAAM zaam = new ZAAM();
         public NOZ()
         {
             InitializeComponent();
+        }
+
+
+        private void btnSaveZam_Click(object sender, RoutedEventArgs e)
+        {
+            DodajJedzonko();
+            this.Close();
+        }
+        private void DodajJedzonko()
+        {
+            Jedzonko jedzonko = new Jedzonko()
+            {
+                Id = Convert.ToInt32(textBoxID.Text),
+                Id_Restauracji= Convert.ToInt32(textBoxIdRestauracji.Text),
+                Nazwa = textBoxNazwa.Text,
+                Cena = Convert.ToDecimal(textBoxCena.Text)
+            };
+
+            zaam.Save(jedzonko);
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

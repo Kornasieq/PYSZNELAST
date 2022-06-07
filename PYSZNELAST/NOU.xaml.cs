@@ -14,14 +14,35 @@ using System.Windows.Shapes;
 
 namespace PYSZNELAST
 {
+   
     /// <summary>
     /// Logika interakcji dla klasy NOU.xaml
     /// </summary>
     public partial class NOU : Window
     {
+        UZO uzo = new UZO(); 
         public NOU()
         {
             InitializeComponent();
+        }
+
+        private void BtnSaveNou_Click(object sender, RoutedEventArgs e)
+        {
+            DodajUżytkownicy();
+            this.Close();
+        }
+        private void DodajUżytkownicy()
+        {
+            Użytkownicy użytkownicy = new Użytkownicy()
+            {
+                Id = Convert.ToInt32(textBoxIdUzo.Text),
+                Nazwa_Użytkownika = textBoxNazwaUzo.Text,
+                Hasło = textBoxHasloUzo.Text,
+                Adres = textBoxAdresUzo.Text
+            };
+
+            uzo.Save(użytkownicy);
+
         }
     }
 }

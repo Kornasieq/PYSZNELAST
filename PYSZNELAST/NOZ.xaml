@@ -7,19 +7,15 @@
         mc:Ignorable="d"
         Title="NOZ" Height="250" Width="386" ResizeMode="NoResize">
     <Grid Background="#FF5AA730" Margin="0,0,0,0">
-        <TextBox HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Height="23"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Height="23"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Height="23"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Height="23"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Height="23"/>
+        <TextBox x:Name="textBoxID" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Height="23"/>
+        <TextBox x:Name="textBoxIdRestauracji" HorizontalAlignment="Left" Margin="10,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Height="23" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="textBoxNazwa" HorizontalAlignment="Left" Margin="10,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Height="23"/>
+        <TextBox x:Name="textBoxCena" HorizontalAlignment="Left" Margin="10,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Height="23"/>
         <TextBlock HorizontalAlignment="Left" Margin="203,10,0,0" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top" Height="23" Width="114" Foreground="White" FontSize="16" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="203,38,0,0" TextWrapping="Wrap" Text="IdRestauracji" VerticalAlignment="Top" Height="23" Width="114" Foreground="White" FontWeight="Bold" FontSize="16"/>
         <TextBlock HorizontalAlignment="Left" Margin="203,66,0,0" TextWrapping="Wrap" Text="Nazwa" VerticalAlignment="Top" Height="23" Width="114" Foreground="White" FontWeight="Bold" FontSize="16"/>
         <TextBlock HorizontalAlignment="Left" Margin="203,94,0,0" TextWrapping="Wrap" Text="Cena" VerticalAlignment="Top" Height="23" Width="114" Foreground="White" FontSize="16" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="203,122,0,0" TextWrapping="Wrap" Text="Restauracja" VerticalAlignment="Top" Height="23" Width="114" Foreground="White" FontSize="16" FontWeight="Bold"/>
-        <Button Content="Zapisz" HorizontalAlignment="Center" Margin="0,178,0,0" VerticalAlignment="Top" Width="356" Height="28" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Height="23"/>
-        <TextBlock HorizontalAlignment="Left" Margin="203,150,0,0" TextWrapping="Wrap" Text="Zamówienie" VerticalAlignment="Top" Height="23" Width="114" Foreground="White" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="btnSaveZam" Content="Zapisz" HorizontalAlignment="Center" Margin="0,178,0,0" VerticalAlignment="Top" Width="356" Height="28" FontWeight="Bold" Click="btnSaveZam_Click"/>
 
     </Grid>
 </Window>

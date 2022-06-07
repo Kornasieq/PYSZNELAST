@@ -19,9 +19,28 @@ namespace PYSZNELAST
     /// </summary>
     public partial class NOR : Window
     {
+        REE ree = new REE();
         public NOR()
         {
             InitializeComponent();
+        }
+
+        private void BtnSaveRes_Click(object sender, RoutedEventArgs e)
+        {
+            DodajRestauracja();
+            this.Close();
+        }
+        private void DodajRestauracja()
+        {
+            Restauracja restauracja = new Restauracja()
+            {
+                Id = Convert.ToInt32(textBoxIdRes.Text),
+                Nazwa = textBoxNazwaRes.Text,
+                Adres = textBoxAdresRes.Text
+            };
+
+            ree.Save(restauracja);
+
         }
     }
 }

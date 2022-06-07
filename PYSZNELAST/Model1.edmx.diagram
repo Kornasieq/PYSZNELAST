@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="RestauracjaModel.Restauracja" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="RestauracjaModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RestauracjaModel.Użytkownicy" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestauracjaModel.Zamówienie" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestauracjaModel.Zamówienie" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
         <AssociationConnector Association="RestauracjaModel.FK_Jedzonko_Restauracja" ManuallyRouted="false" />
         <AssociationConnector Association="RestauracjaModel.FK_Zamówienie_Użytkownicy" ManuallyRouted="false" />
         <AssociationConnector Association="RestauracjaModel.Zamówienie_Jedzenie" ManuallyRouted="false" />
