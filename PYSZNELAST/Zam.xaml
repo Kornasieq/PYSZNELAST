@@ -9,7 +9,7 @@
       Title="Zamówienie">
 
     <Grid Background="#FF5AA730">
-        <DataGrid x:Name="menu" Margin="10,85,10,51"/>
+        <DataGrid x:Name="menu" Margin="10,85,10,51" CanUserAddRows="False"/>
         <Button Content="Dodaj record" Margin="234,334,234,0" RenderTransformOrigin="0.553,-1.31" Click="NOZ" Height="28" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="ZAMÓWIENIE" VerticalAlignment="Top" FontWeight="Bold" FontSize="48" Foreground="#FF87C159"/>
         <Button Content="Zapisz Zmiany" Margin="571,334,35,0" RenderTransformOrigin="0.553,-1.31" Click="SaveNOZ" Height="28" VerticalAlignment="Top"/>

@@ -123,8 +123,8 @@
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="189" Width="610" FontWeight="Bold" FontSize="60" TextAlignment="Center" Foreground="#FF87C159" Text="WITAJ           WYBIERZ TABELĘ"/>
         <StackPanel Background="#FF444444" Orientation="Horizontal" Height="35" HorizontalAlignment="Stretch" VerticalAlignment="Top">
             <Button Style="{DynamicResource RoundedBtn}" Content="Zamówienie" MinWidth="100" Click="Btn1" FontWeight="Bold" Background="#FF5AA730" BorderBrush="#FF5AA730"/>
-            <Button Content="Użytkownik" MinWidth="100" Margin="0,0,0,0" Click="Btn2" FontWeight="Bold" Background="#FF5AA730" BorderBrush="#FF5AA730" Style="{DynamicResource RoundedBtn}"/>
-            <Button Content="Restauracja" MinWidth="100" Margin="0,0,0,0" Click="Btn3" FontWeight="Bold" Background="#FF5AA730" BorderBrush="#FF5AA730" Style="{DynamicResource RoundedBtn}"/>
+            <Button Content="Użytkownik" MinWidth="100" Margin="0,0,0,0" Click="Btn2" FontWeight="Bold" Background="#FF4F8E2C" BorderBrush="#FF4F8E2C" Style="{DynamicResource RoundedBtn}"/>
+            <Button Content="Restauracja" MinWidth="100" Margin="0,0,0,0" Click="Btn3" FontWeight="Bold" Background="#FF407323" BorderBrush="#FF407323" Style="{DynamicResource RoundedBtn}"/>
 
         </StackPanel>
         <Frame x:Name="MainW" Margin="0,35,0,0" NavigationUIVisibility="Hidden" Navigated="MainW_Navigated_1"/>
