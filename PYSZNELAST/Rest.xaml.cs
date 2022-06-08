@@ -20,6 +20,8 @@ namespace PYSZNELAST
     /// </summary>
     public partial class Rest : Page
     {
+        REE ree = new REE();
+
         RestauracjaEntities db = new RestauracjaEntities();
         public Rest()
         {
@@ -31,6 +33,12 @@ namespace PYSZNELAST
         {
             NOR objNOR = new NOR();
             objNOR.Show();
+        }
+
+        private void SaveEdit(object sender, RoutedEventArgs e)
+        {
+            Restauracja restauracja = new Restauracja();
+            db.SaveChanges();
         }
     }
 }

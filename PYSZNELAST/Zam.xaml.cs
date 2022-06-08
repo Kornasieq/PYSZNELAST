@@ -25,6 +25,7 @@ namespace PYSZNELAST
         {
             InitializeComponent();
             menu.ItemsSource = db.Jedzonko.ToList();
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -36,6 +37,12 @@ namespace PYSZNELAST
         {
             NOZ objNOZ = new NOZ();
             objNOZ.Show();
+        }
+
+        private void SaveNOZ(object sender, RoutedEventArgs e)
+        {
+            Jedzonko jedzonko = new Jedzonko();
+            db.SaveChanges();
         }
     }
 }

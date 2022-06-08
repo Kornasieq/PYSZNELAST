@@ -9,9 +9,10 @@
       Title="Użytkownik">
 
     <Grid Background="#FF5AA730">
-        <DataGrid x:Name="Uzytk" Margin="10,85,10,51" IsReadOnly="True"/>
+        <DataGrid x:Name="Uzytk" Margin="10,85,10,51"/>
         <Button Content="Dodaj record" Margin="234,334,234,0" RenderTransformOrigin="0.553,-1.31" Click="NOU" Height="28" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="UŻYTKOWNIK" VerticalAlignment="Top" FontWeight="Bold" FontSize="48" Foreground="#FF87C159"/>
+        <Button Content="Zapisz zmiany" Margin="571,334,35,0" RenderTransformOrigin="0.553,-1.31" Click="SaveNOU" Height="28" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

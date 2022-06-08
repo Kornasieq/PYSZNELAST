@@ -37,5 +37,11 @@ namespace PYSZNELAST
         {
 
         }
+
+        private void SaveNOU(object sender, RoutedEventArgs e)
+        {
+            Użytkownicy użytkownicy = new Użytkownicy();
+            db.SaveChanges();
+        }
     }
 }
