@@ -15,5 +15,11 @@ namespace PYSZNELAST
             db.Jedzonko.Add(jedzonkoNowe);
             db.SaveChanges();
         }
+        public void Remove(int id)
+        {
+            Jedzonko jedzonko = db.Jedzonko.Find(id);
+            db.Jedzonko.Remove(jedzonko);
+            db.SaveChanges();
+        }
     }
 }

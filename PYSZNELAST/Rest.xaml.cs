@@ -40,5 +40,16 @@ namespace PYSZNELAST
             Restauracja restauracja = new Restauracja();
             db.SaveChanges();
         }
+
+        private void btnDeleteRestauracja_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = restt.SelectedItem as Restauracja;
+            if (selectedItem != null)
+            {
+                ree.Remove(selectedItem.Id);
+                restt.ItemsSource = db.Użytkownicy.ToList();
+                restt.Items.Refresh();
+            }
+        }
     }
 }

@@ -21,6 +21,8 @@ namespace PYSZNELAST
     public partial class Zam : Page
     {
         RestauracjaEntities db = new RestauracjaEntities();
+
+        ZAAM zaam = new ZAAM();
         public Zam()
         {
             InitializeComponent();
@@ -38,6 +40,17 @@ namespace PYSZNELAST
         {
             Jedzonko jedzonko = new Jedzonko();
             db.SaveChanges();
+        }
+
+        private void btnDeleteZam_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = menu.SelectedItem as Jedzonko;
+            if (selectedItem != null)
+            {
+                zaam.Remove(selectedItem.Id);
+                menu.ItemsSource = db.Jedzonko.ToList();
+                menu.Items.Refresh();
+            }
         }
     }
 }

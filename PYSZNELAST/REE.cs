@@ -15,6 +15,13 @@ namespace PYSZNELAST
             db.Restauracja.Add(restauracjaNowe);
             db.SaveChanges();
         }
+
+        public void Remove(int id)
+        {
+            Restauracja restauracja = db.Restauracja.Find(id);
+            db.Restauracja.Remove(restauracja);
+            db.SaveChanges();
+        }
     }
 }
 

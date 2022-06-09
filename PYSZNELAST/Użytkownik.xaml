@@ -13,7 +13,7 @@
         <Button Content="Dodaj record" Margin="234,334,234,0" RenderTransformOrigin="0.553,-1.31" Click="NOU" Height="28" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="UŻYTKOWNIK" VerticalAlignment="Top" FontWeight="Bold" FontSize="48" Foreground="#FF87C159"/>
         <Button Content="Zapisz zmiany" Margin="571,334,35,0" RenderTransformOrigin="0.553,-1.31" Click="SaveNOU" Height="28" VerticalAlignment="Top"/>
-        <Button x:Name="btnDeleteUżytkownik" Content="Zapisz zmiany" Margin="35,334,571,0" RenderTransformOrigin="0.553,-1.31" Height="28" VerticalAlignment="Top" Click="btnDeleteUżytkownik_Click"/>
+        <Button x:Name="btnDeleteUżytkownik" Content="Usuń" Margin="35,334,571,0" RenderTransformOrigin="0.553,-1.31" Height="28" VerticalAlignment="Top" Click="btnDeleteUżytkownik_Click"/>
 
     </Grid>
 </Page>
