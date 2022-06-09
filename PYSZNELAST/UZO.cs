@@ -15,6 +15,13 @@ namespace PYSZNELAST
             db.Użytkownicy.Add(użytkownicyNowe);
             db.SaveChanges();
         }
+
+        public void Remove(int id)
+        {
+            Użytkownicy użytkownicy = db.Użytkownicy.Find(id);
+            db.Użytkownicy.Remove(użytkownicy);
+            db.SaveChanges();
+        }
     }
 }
 

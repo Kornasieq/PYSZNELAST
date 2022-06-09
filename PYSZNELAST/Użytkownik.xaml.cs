@@ -21,6 +21,8 @@ namespace PYSZNELAST
     public partial class Użytkownik : Page
     {
         RestauracjaEntities db = new RestauracjaEntities();
+
+        UZO uzo = new UZO();    
         public Użytkownik()
         {
             InitializeComponent();
@@ -42,6 +44,18 @@ namespace PYSZNELAST
         {
             Użytkownicy użytkownicy = new Użytkownicy();
             db.SaveChanges();
+        }
+
+        private void btnDeleteUżytkownik_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = Uzytk.SelectedItem as Użytkownicy;
+            if (selectedItem != null)
+            {
+                uzo.Remove(selectedItem.Id);
+                Uzytk.ItemsSource = db.Użytkownicy.ToList();
+                Uzytk.Items.Refresh();
+            }
+
         }
     }
 }

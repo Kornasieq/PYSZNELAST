@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6d147afc80dc47d8b2ec6e55a788ae71" Name="Diagram1">
-        <EntityTypeShape EntityType="RestauracjaModel.Jedzonko" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestauracjaModel.Restauracja" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestauracjaModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestauracjaModel.Użytkownicy" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestauracjaModel.Zamówienie" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
-        <AssociationConnector Association="RestauracjaModel.FK_Jedzonko_Restauracja" ManuallyRouted="false" />
-        <AssociationConnector Association="RestauracjaModel.FK_Zamówienie_Użytkownicy" ManuallyRouted="false" />
-        <AssociationConnector Association="RestauracjaModel.Zamówienie_Jedzenie" ManuallyRouted="false" />
+      <Diagram DiagramId="548ec6fa7a1d4f2c842f67b37afaff31" Name="Diagram1">
+        <EntityTypeShape EntityType="Model1.Jedzonko" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Restauracja" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.sysdiagrams" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Użytkownicy" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Zamówienie" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="Model1.FK_Jedzonko_Restauracja" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_Zamówienie_Użytkownicy" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.Zamówienie_Jedzenie" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

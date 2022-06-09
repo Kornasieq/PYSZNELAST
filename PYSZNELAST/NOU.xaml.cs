@@ -28,21 +28,42 @@ namespace PYSZNELAST
 
         private void BtnSaveNou_Click(object sender, RoutedEventArgs e)
         {
-            DodajUżytkownicy();
-            this.Close();
-        }
-        private void DodajUżytkownicy()
-        {
-            Użytkownicy użytkownicy = new Użytkownicy()
+            if (DodajUżytkownicy() == true)
             {
+                this.Close();
+            }
+        }
+
+        private bool DodajUżytkownicy()
+        {
+            if(Validation() == true)
+            {
+                Użytkownicy użytkownicy = new Użytkownicy()
+                 {
                 Id = Convert.ToInt32(textBoxIdUzo.Text),
                 Nazwa_Użytkownika = textBoxNazwaUzo.Text,
                 Hasło = textBoxHasloUzo.Text,
                 Adres = textBoxAdresUzo.Text
-            };
+                };
+           
+                    uzo.Save(użytkownicy);
+                return true;
+            
+            
+            }
+            return false;
+        }
 
-            uzo.Save(użytkownicy);
-
+        private bool Validation()
+        {
+           if(textBoxHasloUzo.Text.Length < 8)
+            {
+                if (MessageBox.Show("Hasło musi miec powyżej 8 znaków", "Hasło", MessageBoxButton.OK, MessageBoxImage.Warning) == MessageBoxResult.OK)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
